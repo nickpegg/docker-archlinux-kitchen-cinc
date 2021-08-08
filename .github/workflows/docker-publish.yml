@@ -9,10 +9,8 @@ on:
     branches: [ main ]
 
 env:
-  # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: nickpegg/archlinux-kitchen-cinc
 
 
 jobs:
@@ -44,6 +42,8 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            flavor=auto
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
