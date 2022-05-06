@@ -6,4 +6,4 @@ Cinc instead of Chef.
 Customizations over the vanilla `archlinux` image:
 * Install `openssh` and enable it
 * Run systemd by default - required for Chef testing of services
-* Install `cinc` from AUR
+* Install `cinc` from my package repo (AUR is out of date)
