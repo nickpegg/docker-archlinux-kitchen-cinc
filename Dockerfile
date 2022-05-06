@@ -9,7 +9,7 @@ RUN systemctl enable sshd.service
 
 # Make and install Cinc
 RUN pacman --noconfirm -S base-devel git
-RUN sudo -u nobody git clone https://aur.archlinux.org/cinc.git /tmp/cinc-build
+RUN sudo -u nobody git clone https://github.com/nickpegg/arch-cinc-client /tmp/cinc-build
 WORKDIR /tmp/cinc-build
 RUN sudo -u nobody makepkg
 RUN pacman -U --noconfirm cinc*.pkg.*
